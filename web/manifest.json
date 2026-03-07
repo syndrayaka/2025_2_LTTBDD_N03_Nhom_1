@@ -1,6 +1,6 @@
 {
-    "name": "app1",
-    "short_name": "app1",
+    "name": "syndrayaka's Story App",
+    "short_name": "Syndrayaka",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
