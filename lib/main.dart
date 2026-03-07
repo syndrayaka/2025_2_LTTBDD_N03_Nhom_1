@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "syndrayaka's Story App",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'DINNextLTPro',
-      ),
+      theme: ThemeData(fontFamily: 'DINNextLTPro'),
       home: const SplashScreen(),
     );
   }
