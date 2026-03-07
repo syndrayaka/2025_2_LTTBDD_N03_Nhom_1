@@ -53,5 +53,6 @@ Ngày 7/2/2026
 - Khởi tạo project Flutter
 - Thiết lập repository GitHub
 - Commit lần đầu tiên
+
 Ngày 7/3/2026
 - Cập nhật thêm hoạt ảnh khi khởi động ứng dụng.
