@@ -12,7 +12,7 @@ Repo: 2025_2_LTTBDD_N03_Nhom_1
 
 ## Mô tả đề tài
 
-Story Choices App là một ứng dụng di động được xây dựng bằng Flutter, tập trung vào
+Interactive Story App là một ứng dụng đa nền tảng được xây dựng bằng Flutter, tập trung vào
 thiết kế giao diện và trải nghiệm người dùng. Ứng dụng mô phỏng các câu chuyện dạng
 hội thoại, trong đó người dùng sẽ đưa ra các lựa chọn và nội dung câu chuyện sẽ thay đổi
 tương ứng với từng quyết định.
@@ -53,3 +53,5 @@ Ngày 7/2/2026
 - Khởi tạo project Flutter
 - Thiết lập repository GitHub
 - Commit lần đầu tiên
+Ngày 7/3/2026
+- Cập nhật thêm hoạt ảnh khi khởi động ứng dụng.
