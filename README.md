@@ -55,4 +55,7 @@ Ngày 7/2/2026
 - Commit lần đầu tiên
 
 Ngày 7/3/2026
+
 - Cập nhật thêm hoạt ảnh khi khởi động ứng dụng.
+  Ngày 18/3/2026
+- Cập nhật hai chương cho truyện, hoàn thiện ứng dụng ở mức cơ bản.

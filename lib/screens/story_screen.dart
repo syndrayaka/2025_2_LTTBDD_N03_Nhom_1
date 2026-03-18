@@ -1202,8 +1202,8 @@ class _BookmarkCard extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      tintColor.withValues(alpha: 0.90),
-                      tintColor.withValues(alpha: 0.45),
+                      tintColor.withOpacity(0.90),
+                      tintColor.withOpacity(0.45),
                       const Color(0xFFE9DECF),
                     ],
                   ),
@@ -1515,3 +1515,4 @@ class _TabButton extends StatelessWidget {
     );
   }
 }
+
