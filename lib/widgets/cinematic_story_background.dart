@@ -143,7 +143,7 @@ class _CinematicBackgroundPainter extends CustomPainter {
           const Color(0xFF5FDFFF),
           (math.sin(p.sway + t * math.pi * 2) + 1) / 2,
         )!
-            .withValues(alpha: (p.alpha * pulse).clamp(0.0, 1.0));
+            .withOpacity((p.alpha * pulse).clamp(0.0, 1.0).toDouble());
 
       canvas.drawCircle(Offset(x, y), p.radius * pulse, particlePaint);
     }
@@ -163,3 +163,5 @@ class _CinematicBackgroundPainter extends CustomPainter {
     return oldDelegate.t != t || oldDelegate.particles != particles;
   }
 }
+
+

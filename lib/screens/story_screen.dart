@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
+import '../widgets/language_picker_dialog.dart';
+
 class StoryScreen extends StatefulWidget {
   const StoryScreen({super.key, this.initialTab = 0});
 
@@ -628,9 +631,9 @@ class _StoryBody extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (tab) {
       case 1:
-        return const _HistoryView();
+        return _HistoryView();
       case 2:
-        return const _BookmarksView();
+        return _BookmarksView();
       default:
         return _GrimoireView(
           chapterTitle: chapterTitle,
@@ -650,10 +653,15 @@ class _StoryBody extends StatelessWidget {
 }
 
 class _TopStoryBar extends StatelessWidget {
-  const _TopStoryBar({required this.onMenuTap, required this.onSettingsTap});
+  const _TopStoryBar({
+    required this.onMenuTap,
+    required this.onSettingsTap,
+    required this.title,
+  });
 
   final VoidCallback onMenuTap;
   final VoidCallback onSettingsTap;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -663,9 +671,9 @@ class _TopStoryBar extends StatelessWidget {
           onPressed: onMenuTap,
           icon: const Icon(Icons.menu, size: 30, color: Color(0xFF4A3131)),
         ),
-        const Expanded(
+        Expanded(
           child: Text(
-            'The Flashback of\nSyndrayaka',
+            title,
             style: TextStyle(
               color: Color(0xFF2C1518),
               fontSize: 28,
@@ -711,16 +719,14 @@ class _GrimoireView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _TopStoryBar(
           onMenuTap: () => Navigator.of(context).pop(),
-          onSettingsTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Settings is coming soon.')),
-            );
-          },
+          onSettingsTap: () => showLanguagePickerDialog(context),
+          title: l10n.storyTopTitle,
         ),
         const SizedBox(height: 28),
         const Icon(Icons.wb_sunny_outlined, size: 30, color: Color(0x99816D5E)),
@@ -740,23 +746,23 @@ class _GrimoireView extends StatelessWidget {
         _TypedStoryBlock(text: typedStory),
         if (showChapter0Choices) ...[
           const SizedBox(height: 44),
-          const _SectionLabel(text: 'DECIDE THY FATE'),
+          _SectionLabel(text: l10n.decideFate),
           const SizedBox(height: 24),
           _ChoiceCard(
             icon: Icons.forest,
-            text: 'Confess directly -- "I think... I like you."',
+            text: l10n.choiceConfess,
             onTap: onSelectConfessDirectly,
           ),
           const SizedBox(height: 16),
           _ChoiceCard(
             icon: Icons.menu_book_rounded,
-            text: 'Take a step closer -- "Are you free this weekend?"',
+            text: l10n.choiceStepCloser,
             onTap: onSelectTakeStepCloser,
           ),
           const SizedBox(height: 16),
           _ChoiceCard(
             icon: Icons.local_fire_department,
-            text: 'Do nothing -- Keep things the way they are.',
+            text: l10n.choiceDoNothing,
             onTap: onSelectDoNothing,
           ),
         ],
@@ -765,7 +771,7 @@ class _GrimoireView extends StatelessWidget {
           FilledButton.icon(
             onPressed: onNextChapter,
             icon: const Icon(Icons.skip_next_rounded),
-            label: const Text('Next Chapter'),
+            label: Text(l10n.nextChapter),
             style: FilledButton.styleFrom(
               backgroundColor: const Color(0xFF5B2A2E),
               foregroundColor: const Color(0xFFF4EBDD),
@@ -782,17 +788,17 @@ class _GrimoireView extends StatelessWidget {
         ],
         if (showChapter1Choices) ...[
           const SizedBox(height: 44),
-          const _SectionLabel(text: 'MAKE YOUR CHOICE'),
+          _SectionLabel(text: l10n.makeChoice),
           const SizedBox(height: 24),
           _ChoiceCard(
             icon: Icons.favorite,
-            text: 'She says yes',
+            text: l10n.choiceSheYes,
             onTap: onChapter1ChoiceYes,
           ),
           const SizedBox(height: 16),
           _ChoiceCard(
             icon: Icons.heart_broken,
-            text: 'She hesitates, then chooses someone else',
+            text: l10n.choiceSheElse,
             onTap: onChapter1ChoiceElse,
           ),
         ],
@@ -902,16 +908,14 @@ class _HistoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _TopStoryBar(
           onMenuTap: () => Navigator.of(context).pop(),
-          onSettingsTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Settings is coming soon.')),
-            );
-          },
+          onSettingsTap: () => showLanguagePickerDialog(context),
+          title: l10n.storyTopTitle,
         ),
         const SizedBox(height: 18),
         const Text(
@@ -935,9 +939,9 @@ class _HistoryView extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 28),
-        const _HistoryEntry(
-          chapter: 'CHAPTER 0: PROLOGUE',
-          title: 'The Distance Between Us',
+        _HistoryEntry(
+          chapter: l10n.historyChapter0,
+          title: l10n.historyTitle0,
           decision: '"I stayed close, but let timing decide what came next."',
           outcome:
               'From classmates to quiet confidants, the two of you drifted from distance into '
@@ -945,9 +949,9 @@ class _HistoryView extends StatelessWidget {
           icon: Icons.menu_book_rounded,
         ),
         const SizedBox(height: 26),
-        const _HistoryEntry(
-          chapter: 'CHAPTER 1: AFTER TIME HAS PASSED',
-          title: 'True Ending Route',
+        _HistoryEntry(
+          chapter: l10n.historyChapter1,
+          title: l10n.historyTrueRoute,
           decision: '"I asked again when I was finally ready for any answer."',
           outcome:
               'She smiled and said yes. No rush, no drama, just certainty. '
@@ -955,9 +959,9 @@ class _HistoryView extends StatelessWidget {
           icon: Icons.favorite,
         ),
         const SizedBox(height: 26),
-        const _HistoryEntry(
-          chapter: 'CHAPTER 1: AFTER TIME HAS PASSED',
-          title: 'Bittersweet Ending Route',
+        _HistoryEntry(
+          chapter: l10n.historyChapter1,
+          title: l10n.historyBitterRoute,
           decision:
               '"I let go with sincerity, even when my heart still wanted to stay."',
           outcome:
@@ -986,16 +990,14 @@ class _BookmarksView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _TopStoryBar(
           onMenuTap: () => Navigator.of(context).pop(),
-          onSettingsTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Settings is coming soon.')),
-            );
-          },
+          onSettingsTap: () => showLanguagePickerDialog(context),
+          title: l10n.storyTopTitle,
         ),
         const SizedBox(height: 18),
         const Text(
@@ -1019,23 +1021,21 @@ class _BookmarksView extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24),
-        const _BookmarkCard(
-          title: 'Chapter 0: The Distance Between Us',
+        _BookmarkCard(
+          title: l10n.bookmarkTitle0,
           tintColor: Color(0xFF5F3B2E),
           imagePath: 'assets/backgrounds/ending1.jpg',
-          date: 'Route Snapshot',
-          excerpt:
-              '"A quiet prologue where distance fades, and one message can change everything."',
+          date: l10n.bookmarkDate0,
+          excerpt: l10n.bookmarkExcerpt0,
           icon: Icons.menu_book_rounded,
         ),
         const SizedBox(height: 22),
-        const _BookmarkCard(
-          title: 'Chapter 1: After Time Has Passed',
+        _BookmarkCard(
+          title: l10n.bookmarkTitle1,
           tintColor: Color(0xFF6A727D),
           imagePath: 'assets/backgrounds/ending2.jpg',
-          date: 'Ending Snapshot',
-          excerpt:
-              '"One chapter, two endings: certainty in love, or acceptance in silence."',
+          date: l10n.bookmarkDate1,
+          excerpt: l10n.bookmarkExcerpt1,
           icon: Icons.auto_stories,
         ),
         const SizedBox(height: 22),
@@ -1055,7 +1055,7 @@ class _BookmarksView extends StatelessWidget {
 }
 
 class _HistoryEntry extends StatelessWidget {
-  const _HistoryEntry({
+  _HistoryEntry({
     required this.chapter,
     required this.title,
     required this.decision,
@@ -1161,7 +1161,7 @@ class _HistoryEntry extends StatelessWidget {
 }
 
 class _BookmarkCard extends StatelessWidget {
-  const _BookmarkCard({
+  _BookmarkCard({
     required this.title,
     required this.date,
     required this.excerpt,
@@ -1305,7 +1305,7 @@ class _BookmarkCard extends StatelessWidget {
                   child: FilledButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Opening "$title"...')),
+                        SnackBar(content: Text(AppLocalizations.of(context).openingTitle(title))),
                       );
                     },
                     style: FilledButton.styleFrom(
@@ -1315,7 +1315,7 @@ class _BookmarkCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: const Text('Return to this Moment  >>'),
+                    child: Text(AppLocalizations.of(context).returnMoment),
                   ),
                 ),
               ],
@@ -1336,7 +1336,7 @@ class _SectionLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(child: Divider(color: Color(0x22A48774))),
+        Expanded(child: Divider(color: Color(0x22A48774))),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14),
           child: Text(
@@ -1349,7 +1349,7 @@ class _SectionLabel extends StatelessWidget {
             ),
           ),
         ),
-        const Expanded(child: Divider(color: Color(0x22A48774))),
+        Expanded(child: Divider(color: Color(0x22A48774))),
       ],
     );
   }
@@ -1436,7 +1436,7 @@ class _BottomStoryTabs extends StatelessWidget {
           Expanded(
             child: _TabButton(
               icon: Icons.menu_book_rounded,
-              label: 'Grimoire',
+              label: AppLocalizations.of(context).tabGrimoire,
               active: currentTab == 0,
               onTap: () => onChanged(0),
             ),
@@ -1445,7 +1445,7 @@ class _BottomStoryTabs extends StatelessWidget {
           Expanded(
             child: _TabButton(
               icon: Icons.history_edu,
-              label: 'History',
+              label: AppLocalizations.of(context).tabHistory,
               active: currentTab == 1,
               onTap: () => onChanged(1),
             ),
@@ -1454,7 +1454,7 @@ class _BottomStoryTabs extends StatelessWidget {
           Expanded(
             child: _TabButton(
               icon: Icons.bookmark,
-              label: 'Bookmarks',
+              label: AppLocalizations.of(context).tabBookmarks,
               active: currentTab == 2,
               onTap: () => onChanged(2),
             ),
@@ -1515,4 +1515,18 @@ class _TabButton extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

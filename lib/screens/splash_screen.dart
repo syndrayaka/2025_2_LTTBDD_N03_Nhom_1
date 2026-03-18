@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import '../l10n/app_localizations.dart';
 import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -117,15 +118,16 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final controller = _controller;
 
     if (_hasError) {
-      return const Scaffold(
+      return Scaffold(
         backgroundColor: Colors.black,
         body: Center(
           child: Text(
-            'Khong the tai video splash.',
-            style: TextStyle(color: Colors.white),
+            l10n.splashError,
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       );
@@ -153,8 +155,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
                   controller == null || !controller.value.isInitialized
-                      ? 'Loading boot animation...'
-                      : 'Click/tap anywhere to start the application. \n Nhấn/chạm vào bất cứ đâu để bắt đầu ứng dụng.',
+                      ? l10n.loadingBoot
+                      : l10n.tapToStart,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,

@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
+import '../widgets/language_picker_dialog.dart';
 import 'credits_screen.dart';
 import 'story_screen.dart';
 
@@ -10,6 +12,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
       body: DecoratedBox(
         decoration: const BoxDecoration(
@@ -54,13 +58,8 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             _TopBar(
                               isDesktop: isDesktop,
-                              onSettingsTap: () {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Settings is coming soon.'),
-                                  ),
-                                );
-                              },
+                              title: l10n.menuTopTitle,
+                              onSettingsTap: () => showLanguagePickerDialog(context),
                             ),
                             SizedBox(height: isDesktop ? 28 : 22),
                             if (isDesktop)
@@ -76,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                                         const _BookHeroCard(isCompact: false),
                                         const SizedBox(height: 22),
                                         Text(
-                                          'The Flashback of\nsyndrayaka',
+                                          l10n.menuHeroTitle,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: const Color(0xFFF3E7D8),
@@ -93,6 +92,9 @@ class HomeScreen extends StatelessWidget {
                                     flex: 10,
                                     child: _MenuPanel(
                                       isCompact: false,
+                                      startLabel: l10n.startNewStory,
+                                      continueLabel: l10n.continueStory,
+                                      creditsLabel: l10n.credits,
                                       onStartTap: () {
                                         Navigator.of(context).push(
                                           MaterialPageRoute<void>(
@@ -103,7 +105,8 @@ class HomeScreen extends StatelessWidget {
                                       onContinueTap: () {
                                         Navigator.of(context).push(
                                           MaterialPageRoute<void>(
-                                            builder: (_) => const StoryScreen(initialTab: 1),
+                                            builder: (_) =>
+                                                const StoryScreen(initialTab: 1),
                                           ),
                                         );
                                       },
@@ -122,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                               _BookHeroCard(isCompact: !isTablet),
                               const SizedBox(height: 18),
                               Text(
-                                'The Flashback of\nsyndrayaka',
+                                l10n.menuHeroTitle,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: const Color(0xFFF3E7D8),
@@ -134,6 +137,9 @@ class HomeScreen extends StatelessWidget {
                               SizedBox(height: isTablet ? 24 : 18),
                               _MenuPanel(
                                 isCompact: !isTablet,
+                                startLabel: l10n.startNewStory,
+                                continueLabel: l10n.continueStory,
+                                creditsLabel: l10n.credits,
                                 onStartTap: () {
                                   Navigator.of(context).push(
                                     MaterialPageRoute<void>(
@@ -142,12 +148,13 @@ class HomeScreen extends StatelessWidget {
                                   );
                                 },
                                 onContinueTap: () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute<void>(
-                                            builder: (_) => const StoryScreen(initialTab: 1),
-                                          ),
-                                        );
-                                      },
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute<void>(
+                                      builder: (_) =>
+                                          const StoryScreen(initialTab: 1),
+                                    ),
+                                  );
+                                },
                                 onCreditsTap: () {
                                   Navigator.of(context).push(
                                     MaterialPageRoute<void>(
@@ -175,12 +182,18 @@ class HomeScreen extends StatelessWidget {
 class _MenuPanel extends StatelessWidget {
   const _MenuPanel({
     required this.isCompact,
+    required this.startLabel,
+    required this.continueLabel,
+    required this.creditsLabel,
     required this.onStartTap,
     required this.onContinueTap,
     required this.onCreditsTap,
   });
 
   final bool isCompact;
+  final String startLabel;
+  final String continueLabel;
+  final String creditsLabel;
   final VoidCallback onStartTap;
   final VoidCallback onContinueTap;
   final VoidCallback onCreditsTap;
@@ -190,7 +203,7 @@ class _MenuPanel extends StatelessWidget {
     return Column(
       children: [
         _MenuActionTile(
-          title: 'Start New Story',
+          title: startLabel,
           leadingIcon: Icons.note_alt_outlined,
           trailingIcon: Icons.chevron_right,
           onTap: onStartTap,
@@ -198,7 +211,7 @@ class _MenuPanel extends StatelessWidget {
         ),
         SizedBox(height: isCompact ? 12 : 16),
         _MenuActionTile(
-          title: 'Continue Story',
+          title: continueLabel,
           leadingIcon: Icons.play_arrow_rounded,
           trailingIcon: Icons.history,
           isLight: true,
@@ -207,7 +220,7 @@ class _MenuPanel extends StatelessWidget {
         ),
         SizedBox(height: isCompact ? 12 : 16),
         _MenuActionTile(
-          title: 'Credits',
+          title: creditsLabel,
           leadingIcon: Icons.info,
           trailingIcon: Icons.groups_rounded,
           isMuted: true,
@@ -277,10 +290,15 @@ class _GlowBlob extends StatelessWidget {
 }
 
 class _TopBar extends StatelessWidget {
-  const _TopBar({required this.onSettingsTap, required this.isDesktop});
+  const _TopBar({
+    required this.onSettingsTap,
+    required this.isDesktop,
+    required this.title,
+  });
 
   final VoidCallback onSettingsTap;
   final bool isDesktop;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -294,7 +312,7 @@ class _TopBar extends StatelessWidget {
         const SizedBox(width: 12),
         Expanded(
           child: Text(
-            'The Flashback of syndrayaka',
+            title,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: const Color(0xFFF3E7D8),
@@ -418,8 +436,10 @@ class _MenuActionTile extends StatelessWidget {
         : isMuted
             ? const Color(0xFFBFB0AA)
             : const Color(0x55311F27);
-    final textColor = isLight ? const Color(0xFF3A1F1E) : const Color(0xFFF1E8DA);
-    final iconBoxColor = isLight ? const Color(0xFFE3D5C4) : const Color(0x44FFFFFF);
+    final textColor =
+        isLight ? const Color(0xFF3A1F1E) : const Color(0xFFF1E8DA);
+    final iconBoxColor =
+        isLight ? const Color(0xFFE3D5C4) : const Color(0x44FFFFFF);
 
     final tilePadding = isCompact ? 12.0 : 14.0;
     final iconBoxSize = isCompact ? 50.0 : 58.0;
@@ -469,7 +489,7 @@ class _MenuActionTile extends StatelessWidget {
               ),
               Icon(
                 trailingIcon,
-                color: textColor.withValues(alpha: 0.7),
+                color: textColor.withOpacity(0.7),
                 size: isCompact ? 30 : 32,
               ),
             ],
@@ -479,7 +499,3 @@ class _MenuActionTile extends StatelessWidget {
     );
   }
 }
-
-
-
-

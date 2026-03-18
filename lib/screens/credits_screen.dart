@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
+
 class CreditsScreen extends StatelessWidget {
   const CreditsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Credits')),
-      body: const Center(
+      appBar: AppBar(title: Text(l10n.credits)),
+      body: Center(
         child: Text(
-          'Credits content will be implemented next.',
+          l10n.creditsPlaceholder,
           textAlign: TextAlign.center,
         ),
       ),
