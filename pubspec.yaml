@@ -63,6 +63,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/audio/
+    - assets/backgrounds/
     - assets/ui/
     - assets/videos/
     - assets/fonts/
@@ -97,4 +98,5 @@ flutter:
     - family: DINNextLTPro
       fonts:
         - asset: assets/fonts/DIN Next LT Pro Regular.ttf
+
 

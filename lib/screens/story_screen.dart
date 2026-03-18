@@ -10,23 +10,23 @@ class StoryScreen extends StatefulWidget {
 }
 
 class _StoryScreenState extends State<StoryScreen> {
-  static const String _fullStory =
-      'The first time you saw her... it wasn'
-      't anything special.\n\n'
+  static const String _chapter0Title =
+      'Chapter 0: Prologue - The Distance Between Us';
+  static const String _chapter1Title = 'Chapter 1 - After Time Has Passed';
+
+  static const String _chapter0Story =
+      'The first time you saw her... it wasn\'t anything special.\n\n'
       'No dramatic moment. No cinematic lighting. No music playing in the background.\n\n'
       'Just an ordinary afternoon.\n\n'
-      'You walked into the classroom, scanning for a familiar seat, when your eyes happened to meet someone else'
-      's.\n\n'
+      'You walked into the classroom, scanning for a familiar seat, when your eyes happened to meet someone else\'s.\n\n'
       'She was sitting by the window.\n\n'
       'Her hair tied loosely, her gaze drifting outside. Sunlight slipped through the glass, resting gently on her face in a way that felt... quiet.\n\n'
       'You looked for a few seconds.\n\n'
       'Then you looked away.\n\n'
       'And that was it.\n\n'
-      'Or at least... that'
-      's what you thought.\n\n'
+      'Or at least... that\'s what you thought.\n\n'
       'Time passed.\n\n'
-      'The two of you started talking just a little. Simple greetings, occasional questions about homework, short conversations that didn'
-      't really lead anywhere.\n\n'
+      'The two of you started talking just a little. Simple greetings, occasional questions about homework, short conversations that didn\'t really lead anywhere.\n\n'
       'Nothing clear.\n\n'
       'Nothing you could name.\n\n'
       'Until one day.\n\n'
@@ -39,14 +39,12 @@ class _StoryScreenState extends State<StoryScreen> {
       'But because you realized at some point, without noticing you had gotten used to her being there.\n\n'
       'Your conversations became longer.\n\n'
       'Messages started to go beyond just schoolwork.\n\n'
-      'You began to notice the small things--how she laughed when she felt comfortable, the pauses when she chose not to say anything, the way silence between you didn'
-      't feel awkward anymore.\n\n'
+      'You began to notice the small things--how she laughed when she felt comfortable, the pauses when she chose not to say anything, the way silence between you didn\'t feel awkward anymore.\n\n'
       'The distance between you... was slowly fading.\n\n'
       'Naturally.\n\n'
       'Dangerously.\n\n'
       'And then one day, a thought hit you.\n\n'
-      'If you don'
-      't do anything now...\n\n'
+      'If you don\'t do anything now...\n\n'
       'This might be as far as it ever goes.\n\n'
       'Not moving forward.\n\n'
       'But never disappearing either.\n\n'
@@ -55,8 +53,7 @@ class _StoryScreenState extends State<StoryScreen> {
       'Her name is right there.\n\n'
       'One message.\n\n'
       'One sentence.\n\n'
-      'That'
-      's all it takes to change everything.\n\n'
+      'That\'s all it takes to change everything.\n\n'
       'Or lose it.';
 
   static const String _confessDirectlyStory =
@@ -177,6 +174,7 @@ class _StoryScreenState extends State<StoryScreen> {
       'Not broken.\n\n'
       'Just... defined.\n\n'
       'End of Chapter';
+
   static const String _doNothingStory =
       'You stare at her name on your screen.\n\n'
       'Your thumb hovers over the keyboard.\n\n'
@@ -239,12 +237,169 @@ class _StoryScreenState extends State<StoryScreen> {
       'Without ever being fully spoken.\n\n'
       '-End of Chapter-';
 
+  static const String _chapter1Story =
+      'After that day--\n\n'
+      'things didn\'t end.\n\n'
+      'They just... changed shape.\n\n'
+      'You still talked.\n\n'
+      'Still met each other.\n\n'
+      'Still shared the same small moments that once felt so natural.\n\n'
+      'Just not as often.\n\n'
+      'Not as close.\n\n'
+      'Not as before.\n\n'
+      'There was a distance now.\n\n'
+      'Not forced.\n\n'
+      'Not spoken.\n\n'
+      'But understood.\n\n'
+      'And somehow, both of you learned how to live with it.\n\n'
+      'Time moved on.\n\n'
+      'Quietly.\n\n'
+      'Then one day--\n\n'
+      'you heard she was in a new relationship.\n\n'
+      'It didn\'t hit as hard as you thought it would.\n\n'
+      'Maybe because you had already seen it coming.\n\n'
+      'Or maybe--\n\n'
+      'because somewhere along the way, you had learned how to accept things you couldn\'t change.\n\n'
+      'You didn\'t ask much.\n\n'
+      'Didn\'t interfere.\n\n'
+      'Just... stayed where you were.\n\n'
+      'Not too close.\n\n'
+      'Not too far.\n\n'
+      'And so--\n\n'
+      'life went on.\n\n'
+      'Until almost a year later.\n\n'
+      'Another message.\n\n'
+      'Another piece of news.\n\n'
+      'She broke up.\n\n'
+      'Again.\n\n'
+      'This time, it felt different.\n\n'
+      'Not because of her--\n\n'
+      'but because of you.\n\n'
+      'You weren\'t the same person anymore.\n\n'
+      'You didn\'t rush.\n\n'
+      'Didn\'t push.\n\n'
+      'Didn\'t try to "be the one" right away.\n\n'
+      'Instead--\n\n'
+      'you stayed.\n\n'
+      'Quietly.\n\n'
+      'Steadily.\n\n'
+      'You listened when she needed to talk.\n\n'
+      'Stayed silent when she didn\'t.\n\n'
+      'Walked beside her, without trying to lead.\n\n'
+      'No pressure.\n\n'
+      'No expectations.\n\n'
+      'Just... presence.\n\n'
+      'And slowly--\n\n'
+      'things began to change.\n\n'
+      'She started texting you more.\n\n'
+      'Calling you more.\n\n'
+      'Asking if you were free.\n\n'
+      'Sometimes for no reason at all.\n\n'
+      'You noticed the way she opened up more easily.\n\n'
+      'The way she laughed a little longer.\n\n'
+      'The way she looked at you--\n\n'
+      'not the same as before.\n\n'
+      'And this time--\n\n'
+      'you didn\'t rush to name it.\n\n'
+      'Because you knew--\n\n'
+      'whatever this was...\n\n'
+      'it needed time.\n\n'
+      'Until one day--\n\n'
+      'you realized something.\n\n'
+      'The distance that once existed...\n\n'
+      'was gone.\n\n'
+      'You look at her.\n\n'
+      'She looks back.\n\n'
+      'No hesitation.\n\n'
+      'No confusion.\n\n'
+      'Just... something unspoken.\n\n'
+      'And for the second time--\n\n'
+      'you stand at the same place.\n\n'
+      'But this time--\n\n'
+      'you\'re different.\n\n'
+      'So you ask.\n\n'
+      'Not impulsively.\n\n'
+      'Not out of fear of losing her.\n\n'
+      'But because now--\n\n'
+      'you\'re ready for whatever answer comes.\n\n'
+      'And this time--\n\n'
+      'the choice...\n\n'
+      'is hers.';
+  static const String _chapter1YesStory =
+      'She doesn\'t answer immediately.\n\n'
+      'But she doesn\'t look away either.\n\n'
+      'There\'s a quiet moment between you.\n\n'
+      'Soft.\n\n'
+      'Real.\n\n'
+      'Then--\n\n'
+      'she smiles.\n\n'
+      'Not the polite kind.\n\n'
+      'Not the uncertain kind.\n\n'
+      'But the kind you\'ve never seen before.\n\n'
+      '"...I think I\'m ready now."\n\n'
+      'Your chest tightens.\n\n'
+      'But not in pain.\n\n'
+      '"And... I think I want to try. With you."\n\n'
+      'No dramatic moment.\n\n'
+      'No overwhelming rush.\n\n'
+      'Just something calm.\n\n'
+      'Something certain.\n\n'
+      'After everything--\n\n'
+      'after all the distance, the waiting, the silence--\n\n'
+      'you finally step forward.\n\n'
+      'Together.\n\n'
+      'And this time--\n\n'
+      'neither of you pulls back.\n\n'
+      'End - True Ending';
+  static const String _chapter1ElseStory =
+      'She doesn\'t answer right away.\n\n'
+      'And somehow--\n\n'
+      'that tells you everything.\n\n'
+      'Days pass.\n\n'
+      'Then weeks.\n\n'
+      'You don\'t push.\n\n'
+      'Don\'t ask again.\n\n'
+      'Until one day--\n\n'
+      'she tells you.\n\n'
+      '"I\'m sorry... I thought about it a lot."\n\n'
+      'You already know what\'s coming.\n\n'
+      '"I really care about you."\n\n'
+      '"But... I don\'t think I can be with you like that."\n\n'
+      'A pause.\n\n'
+      'Then--\n\n'
+      '"I met someone."\n\n'
+      'There it is.\n\n'
+      'This time, it doesn\'t break you the same way.\n\n'
+      'It still hurts.\n\n'
+      'Of course it does.\n\n'
+      'But not like before.\n\n'
+      'Because now you understand--\n\n'
+      'sometimes, timing matters more than feelings.\n\n'
+      'You look at her.\n\n'
+      'And for once--\n\n'
+      'you don\'t try to hold on.\n\n'
+      'You just nod.\n\n'
+      '"I hope you\'re happy."\n\n'
+      'And this time--\n\n'
+      'you mean it.\n\n'
+      'She smiles.\n\n'
+      'A little sad.\n\n'
+      'A little grateful.\n\n'
+      'Then slowly--\n\n'
+      'the distance returns.\n\n'
+      'Not suddenly.\n\n'
+      'Not painfully.\n\n'
+      'Just... naturally.\n\n'
+      'Like it was always meant to be there.\n\n'
+      'End - Bittersweet Ending';
+
   final ScrollController _scrollController = ScrollController();
   late int _currentTab;
   bool _canScrollMore = true;
   String _typedStory = '';
   bool _isTyping = false;
-  String _activeStory = _fullStory;
+  String _activeStory = _chapter0Story;
+  String _activeChapterTitle = _chapter0Title;
 
   @override
   void initState() {
@@ -262,30 +417,22 @@ class _StoryScreenState extends State<StoryScreen> {
   }
 
   void _handleScroll() {
-    if (!_scrollController.hasClients) {
-      return;
-    }
+    if (!_scrollController.hasClients) return;
     final atBottom =
         _scrollController.position.pixels >=
         _scrollController.position.maxScrollExtent - 6;
     final nextCanScrollMore = !atBottom;
-    if (nextCanScrollMore == _canScrollMore) {
-      return;
-    }
+    if (nextCanScrollMore == _canScrollMore) return;
     setState(() {
       _canScrollMore = nextCanScrollMore;
     });
   }
 
   Future<void> _scrollByStep() async {
-    if (!_scrollController.hasClients) {
-      return;
-    }
-
+    if (!_scrollController.hasClients) return;
     final viewport = _scrollController.position.viewportDimension;
     final current = _scrollController.offset;
     final maxOffset = _scrollController.position.maxScrollExtent;
-
     final target = _canScrollMore
         ? (current + viewport * 0.72).clamp(0.0, maxOffset)
         : (current - viewport * 0.72).clamp(0.0, maxOffset);
@@ -298,15 +445,11 @@ class _StoryScreenState extends State<StoryScreen> {
   }
 
   Future<void> _startTypewriter() async {
-    if (_isTyping || _typedStory.length >= _activeStory.length) {
-      return;
-    }
+    if (_isTyping || _typedStory.length >= _activeStory.length) return;
 
     _isTyping = true;
     for (var i = _typedStory.length + 1; i <= _activeStory.length; i++) {
-      if (!mounted) {
-        return;
-      }
+      if (!mounted) return;
       setState(() {
         _typedStory = _activeStory.substring(0, i);
       });
@@ -315,13 +458,11 @@ class _StoryScreenState extends State<StoryScreen> {
     _isTyping = false;
   }
 
-  Future<void> _onSelectConfessDirectly() async {
-    if (_activeStory != _fullStory || _isTyping) {
-      return;
-    }
-
+  Future<void> _setStory(String title, String story) async {
+    if (_isTyping) return;
     setState(() {
-      _activeStory = _confessDirectlyStory;
+      _activeChapterTitle = title;
+      _activeStory = story;
       _typedStory = '';
     });
 
@@ -332,50 +473,41 @@ class _StoryScreenState extends State<StoryScreen> {
     );
 
     await _startTypewriter();
+  }
+
+  Future<void> _onSelectConfessDirectly() async {
+    if (_activeStory != _chapter0Story) return;
+    await _setStory(_chapter0Title, _confessDirectlyStory);
   }
 
   Future<void> _onSelectTakeStepCloser() async {
-    if (_activeStory != _fullStory || _isTyping) {
-      return;
-    }
-
-    setState(() {
-      _activeStory = _takeStepCloserStory;
-      _typedStory = '';
-    });
-
-    await _scrollController.animateTo(
-      0,
-      duration: const Duration(milliseconds: 260),
-      curve: Curves.easeOutCubic,
-    );
-
-    await _startTypewriter();
+    if (_activeStory != _chapter0Story) return;
+    await _setStory(_chapter0Title, _takeStepCloserStory);
   }
 
   Future<void> _onSelectDoNothing() async {
-    if (_activeStory != _fullStory || _isTyping) {
+    if (_activeStory != _chapter0Story) return;
+    await _setStory(_chapter0Title, _doNothingStory);
+  }
+
+  Future<void> _onNextChapter() async {
+    if (_activeStory == _chapter1Story || _activeStory == _chapter0Story)
       return;
-    }
+    await _setStory(_chapter1Title, _chapter1Story);
+  }
 
-    setState(() {
-      _activeStory = _doNothingStory;
-      _typedStory = '';
-    });
+  Future<void> _onChapter1ChoiceYes() async {
+    if (_activeStory != _chapter1Story) return;
+    await _setStory(_chapter1Title, _chapter1YesStory);
+  }
 
-    await _scrollController.animateTo(
-      0,
-      duration: const Duration(milliseconds: 260),
-      curve: Curves.easeOutCubic,
-    );
-
-    await _startTypewriter();
+  Future<void> _onChapter1ChoiceElse() async {
+    if (_activeStory != _chapter1Story) return;
+    await _setStory(_chapter1Title, _chapter1ElseStory);
   }
 
   void _onTabChanged(int index) {
-    if (_currentTab == index) {
-      return;
-    }
+    if (_currentTab == index) return;
     setState(() {
       _currentTab = index;
     });
@@ -386,13 +518,17 @@ class _StoryScreenState extends State<StoryScreen> {
       curve: Curves.easeOutCubic,
     );
 
-    if (index == 0) {
-      _startTypewriter();
-    }
+    if (index == 0) _startTypewriter();
   }
 
   @override
   Widget build(BuildContext context) {
+    final isChapter0Base = _activeStory == _chapter0Story;
+    final isChapter1Base = _activeStory == _chapter1Story;
+    final storyDone = _typedStory.length >= _activeStory.length;
+    final isChapter0RouteStory =
+        _activeChapterTitle == _chapter0Title && !isChapter0Base;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF5EFEA),
       body: SafeArea(
@@ -413,13 +549,18 @@ class _StoryScreenState extends State<StoryScreen> {
                           constraints: const BoxConstraints(maxWidth: 760),
                           child: _StoryBody(
                             tab: _currentTab,
+                            chapterTitle: _activeChapterTitle,
                             typedStory: _typedStory,
-                            showChoices:
-                                _activeStory == _fullStory &&
-                                _typedStory.length >= _fullStory.length,
+                            showChapter0Choices: isChapter0Base && storyDone,
+                            showChapter1Choices: isChapter1Base && storyDone,
+                            showNextChapterButton:
+                                isChapter0RouteStory && storyDone,
                             onSelectConfessDirectly: _onSelectConfessDirectly,
                             onSelectTakeStepCloser: _onSelectTakeStepCloser,
                             onSelectDoNothing: _onSelectDoNothing,
+                            onNextChapter: _onNextChapter,
+                            onChapter1ChoiceYes: _onChapter1ChoiceYes,
+                            onChapter1ChoiceElse: _onChapter1ChoiceElse,
                           ),
                         ),
                       ),
@@ -457,19 +598,31 @@ class _StoryScreenState extends State<StoryScreen> {
 class _StoryBody extends StatelessWidget {
   const _StoryBody({
     required this.tab,
+    required this.chapterTitle,
     required this.typedStory,
-    required this.showChoices,
+    required this.showChapter0Choices,
+    required this.showChapter1Choices,
+    required this.showNextChapterButton,
     required this.onSelectConfessDirectly,
     required this.onSelectTakeStepCloser,
     required this.onSelectDoNothing,
+    required this.onNextChapter,
+    required this.onChapter1ChoiceYes,
+    required this.onChapter1ChoiceElse,
   });
 
   final int tab;
+  final String chapterTitle;
   final String typedStory;
-  final bool showChoices;
+  final bool showChapter0Choices;
+  final bool showChapter1Choices;
+  final bool showNextChapterButton;
   final VoidCallback onSelectConfessDirectly;
   final VoidCallback onSelectTakeStepCloser;
   final VoidCallback onSelectDoNothing;
+  final VoidCallback onNextChapter;
+  final VoidCallback onChapter1ChoiceYes;
+  final VoidCallback onChapter1ChoiceElse;
 
   @override
   Widget build(BuildContext context) {
@@ -480,11 +633,17 @@ class _StoryBody extends StatelessWidget {
         return const _BookmarksView();
       default:
         return _GrimoireView(
+          chapterTitle: chapterTitle,
           typedStory: typedStory,
-          showChoices: showChoices,
+          showChapter0Choices: showChapter0Choices,
+          showChapter1Choices: showChapter1Choices,
+          showNextChapterButton: showNextChapterButton,
           onSelectConfessDirectly: onSelectConfessDirectly,
           onSelectTakeStepCloser: onSelectTakeStepCloser,
           onSelectDoNothing: onSelectDoNothing,
+          onNextChapter: onNextChapter,
+          onChapter1ChoiceYes: onChapter1ChoiceYes,
+          onChapter1ChoiceElse: onChapter1ChoiceElse,
         );
     }
   }
@@ -525,18 +684,30 @@ class _TopStoryBar extends StatelessWidget {
 
 class _GrimoireView extends StatelessWidget {
   const _GrimoireView({
+    required this.chapterTitle,
     required this.typedStory,
-    required this.showChoices,
+    required this.showChapter0Choices,
+    required this.showChapter1Choices,
+    required this.showNextChapterButton,
     required this.onSelectConfessDirectly,
     required this.onSelectTakeStepCloser,
     required this.onSelectDoNothing,
+    required this.onNextChapter,
+    required this.onChapter1ChoiceYes,
+    required this.onChapter1ChoiceElse,
   });
 
+  final String chapterTitle;
   final String typedStory;
-  final bool showChoices;
+  final bool showChapter0Choices;
+  final bool showChapter1Choices;
+  final bool showNextChapterButton;
   final VoidCallback onSelectConfessDirectly;
   final VoidCallback onSelectTakeStepCloser;
   final VoidCallback onSelectDoNothing;
+  final VoidCallback onNextChapter;
+  final VoidCallback onChapter1ChoiceYes;
+  final VoidCallback onChapter1ChoiceElse;
 
   @override
   Widget build(BuildContext context) {
@@ -554,10 +725,10 @@ class _GrimoireView extends StatelessWidget {
         const SizedBox(height: 28),
         const Icon(Icons.wb_sunny_outlined, size: 30, color: Color(0x99816D5E)),
         const SizedBox(height: 20),
-        const Text(
-          'Chapter 0: Prologue - The Distance Between Us',
+        Text(
+          chapterTitle,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xFF3A1E22),
             fontSize: 60,
             fontWeight: FontWeight.w700,
@@ -567,7 +738,7 @@ class _GrimoireView extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         _TypedStoryBlock(text: typedStory),
-        if (showChoices) ...[
+        if (showChapter0Choices) ...[
           const SizedBox(height: 44),
           const _SectionLabel(text: 'DECIDE THY FATE'),
           const SizedBox(height: 24),
@@ -589,6 +760,64 @@ class _GrimoireView extends StatelessWidget {
             onTap: onSelectDoNothing,
           ),
         ],
+        if (showNextChapterButton) ...[
+          const SizedBox(height: 32),
+          FilledButton.icon(
+            onPressed: onNextChapter,
+            icon: const Icon(Icons.skip_next_rounded),
+            label: const Text('Next Chapter'),
+            style: FilledButton.styleFrom(
+              backgroundColor: const Color(0xFF5B2A2E),
+              foregroundColor: const Color(0xFFF4EBDD),
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              textStyle: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
+        ],
+        if (showChapter1Choices) ...[
+          const SizedBox(height: 44),
+          const _SectionLabel(text: 'MAKE YOUR CHOICE'),
+          const SizedBox(height: 24),
+          _ChoiceCard(
+            icon: Icons.favorite,
+            text: 'She says yes',
+            onTap: onChapter1ChoiceYes,
+          ),
+          const SizedBox(height: 16),
+          _ChoiceCard(
+            icon: Icons.heart_broken,
+            text: 'She hesitates, then chooses someone else',
+            onTap: onChapter1ChoiceElse,
+          ),
+        ],
+        if (typedStory.endsWith('End - True Ending') ||
+            typedStory.endsWith('End - Bittersweet Ending')) ...[
+          const SizedBox(height: 34),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+            decoration: BoxDecoration(
+              color: const Color(0xFFF0E6DA),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: const Color(0x22A57F67)),
+            ),
+            child: const Text(
+              'THE END',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xFF5B2A2E),
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 2.2,
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }
@@ -601,36 +830,70 @@ class _TypedStoryBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (text.isEmpty) {
-      return const SizedBox.shrink();
+    if (text.isEmpty) return const SizedBox.shrink();
+
+    final bodyStyle = const TextStyle(
+      color: Color(0xFF2F2325),
+      fontSize: 21,
+      height: 1.55,
+    );
+
+    final spans = <TextSpan>[
+      TextSpan(
+        text: text.substring(0, 1),
+        style: const TextStyle(
+          color: Color(0xFF9D2E43),
+          fontSize: 74,
+          fontWeight: FontWeight.w700,
+          height: 1,
+        ),
+      ),
+    ];
+
+    const endings = ['End - True Ending', 'End - Bittersweet Ending'];
+    var remaining = text.substring(1);
+    while (remaining.isNotEmpty) {
+      var nearestIndex = -1;
+      String? nearestEnding;
+
+      for (final ending in endings) {
+        final idx = remaining.indexOf(ending);
+        if (idx >= 0 && (nearestIndex == -1 || idx < nearestIndex)) {
+          nearestIndex = idx;
+          nearestEnding = ending;
+        }
+      }
+
+      if (nearestIndex == -1 || nearestEnding == null) {
+        spans.add(TextSpan(text: remaining, style: bodyStyle));
+        break;
+      }
+
+      if (nearestIndex > 0) {
+        spans.add(
+          TextSpan(
+            text: remaining.substring(0, nearestIndex),
+            style: bodyStyle,
+          ),
+        );
+      }
+
+      spans.add(
+        TextSpan(
+          text: nearestEnding,
+          style: const TextStyle(
+            color: Color(0xFF2F2325),
+            fontSize: 21,
+            height: 1.55,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+      );
+
+      remaining = remaining.substring(nearestIndex + nearestEnding.length);
     }
 
-    final first = text.substring(0, 1);
-    final rest = text.substring(1);
-
-    return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: first,
-            style: const TextStyle(
-              color: Color(0xFF9D2E43),
-              fontSize: 74,
-              fontWeight: FontWeight.w700,
-              height: 1,
-            ),
-          ),
-          TextSpan(
-            text: rest,
-            style: const TextStyle(
-              color: Color(0xFF2F2325),
-              fontSize: 21,
-              height: 1.55,
-            ),
-          ),
-        ],
-      ),
-    );
+    return RichText(text: TextSpan(children: spans));
   }
 }
 
@@ -673,33 +936,34 @@ class _HistoryView extends StatelessWidget {
         ),
         const SizedBox(height: 28),
         const _HistoryEntry(
-          chapter: 'CHAPTER I: THE VEILED ARRIVAL',
-          title: 'The Crossroads of Echoes',
-          decision: '"I chose to enter the Silver Grove without an offering."',
+          chapter: 'CHAPTER 0: PROLOGUE',
+          title: 'The Distance Between Us',
+          decision: '"I stayed close, but let timing decide what came next."',
           outcome:
-              'The spirits whispered of your insolence, but the Grove itself seemed curious. '
-              'You gained the Mark of the Unbidden, but lost 10 points of Affinity with the Elder Tree.',
-          icon: Icons.park,
+              'From classmates to quiet confidants, the two of you drifted from distance into '
+              'something fragile and unspoken. You stood at the edge of change.',
+          icon: Icons.menu_book_rounded,
         ),
         const SizedBox(height: 26),
         const _HistoryEntry(
-          chapter: 'CHAPTER II: SILENT WHISPERS',
-          title: 'The Midnight Archive',
-          decision: '"I decided to steal the Forbidden Scroll of Syndra."',
+          chapter: 'CHAPTER 1: AFTER TIME HAS PASSED',
+          title: 'True Ending Route',
+          decision: '"I asked again when I was finally ready for any answer."',
           outcome:
-              'The ink stained your fingers permanently. You now possess the ancient knowledge, '
-              'but the Archive Sentinels are forever hunting your scent through time.',
-          icon: Icons.hourglass_bottom,
+              'She smiled and said yes. No rush, no drama, just certainty. '
+              'After every pause and every detour, both of you stepped forward together.',
+          icon: Icons.favorite,
         ),
         const SizedBox(height: 26),
         const _HistoryEntry(
-          chapter: 'CHAPTER III: BLOOD & PARCHMENT',
-          title: 'The Crimson Feast',
-          decision: '"I shared my blood to break the curse."',
+          chapter: 'CHAPTER 1: AFTER TIME HAS PASSED',
+          title: 'Bittersweet Ending Route',
+          decision:
+              '"I let go with sincerity, even when my heart still wanted to stay."',
           outcome:
-              'A heavy price paid. The villagers are free, but your connection to the physical '
-              'realm has grown thin. You are now half-ghost, gaining the ability Ethereal Step.',
-          icon: Icons.bookmark,
+              'She chose someone else. The pain remained, but it no longer shattered you. '
+              'You accepted the distance and wished her happiness, honestly.',
+          icon: Icons.heart_broken,
         ),
         const SizedBox(height: 18),
         const Icon(Icons.fingerprint, color: Color(0x886D5851), size: 30),
@@ -756,30 +1020,23 @@ class _BookmarksView extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         const _BookmarkCard(
-          title: 'The Whispering Archive',
+          title: 'Chapter 0: The Distance Between Us',
           tintColor: Color(0xFF5F3B2E),
-          date: 'Saved on Oct 24, 1892',
+          imagePath: 'assets/backgrounds/ending1.jpg',
+          date: 'Route Snapshot',
           excerpt:
-              '"The scent of dust and old ink was overwhelming as the shelves began to..."',
-          icon: Icons.auto_stories,
+              '"A quiet prologue where distance fades, and one message can change everything."',
+          icon: Icons.menu_book_rounded,
         ),
         const SizedBox(height: 22),
         const _BookmarkCard(
-          title: 'Thirteen Strokes',
+          title: 'Chapter 1: After Time Has Passed',
           tintColor: Color(0xFF6A727D),
-          date: 'Saved on Nov 02, 1892',
+          imagePath: 'assets/backgrounds/ending2.jpg',
+          date: 'Ending Snapshot',
           excerpt:
-              '"Time itself seemed to fracture as the great clock struck a thirteenth hour..."',
-          icon: Icons.hourglass_top,
-        ),
-        const SizedBox(height: 22),
-        const _BookmarkCard(
-          title: 'Veil of the Woods',
-          tintColor: Color(0xFF1D4F59),
-          date: 'Saved on Dec 15, 1892',
-          excerpt:
-              '"The blue bioluminescence guided our path, each step sinking into moss that felt..."',
-          icon: Icons.spa,
+              '"One chapter, two endings: certainty in love, or acceptance in silence."',
+          icon: Icons.auto_stories,
         ),
         const SizedBox(height: 22),
         const Icon(Icons.bookmark_border, color: Color(0x886D5851), size: 30),
@@ -910,6 +1167,7 @@ class _BookmarkCard extends StatelessWidget {
     required this.excerpt,
     required this.icon,
     required this.tintColor,
+    this.imagePath,
   });
 
   final String title;
@@ -917,6 +1175,7 @@ class _BookmarkCard extends StatelessWidget {
   final String excerpt;
   final IconData icon;
   final Color tintColor;
+  final String? imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -949,13 +1208,26 @@ class _BookmarkCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                child: Center(
-                  child: Icon(
-                    Icons.landscape_rounded,
-                    color: const Color(0x88FFF7EC),
-                    size: 70,
-                  ),
-                ),
+                child: imagePath == null
+                    ? const Center(
+                        child: Icon(
+                          Icons.landscape_rounded,
+                          color: Color(0x88FFF7EC),
+                          size: 70,
+                        ),
+                      )
+                    : ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        ),
+                        child: Image.asset(
+                          imagePath!,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 230,
+                        ),
+                      ),
               ),
               Positioned(
                 right: 10,
